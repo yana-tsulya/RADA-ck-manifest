@@ -2,7 +2,8 @@ jQuery(function ($) {
 
     //region ===== Variables =====
     var $window = $(window),
-        $welcome = $("#welcome");
+        $sections = $(".wrapper > section"),
+        animateDuration = 800;
     //endregion
 
     //region ========== Scroll to the top of the page ==========
@@ -11,19 +12,29 @@ jQuery(function ($) {
 
         $("html, body").animate({
             scrollTop: 0
-        }, "slow");
+        }, animateDuration);
     });
     //endregion
 
     //region ===== Calculate welcome block height =====
-    welcomeHeight();
+    sectionsHeight();
 
-    $window.resize(welcomeHeight);
+    $window.resize(sectionsHeight);
+    //endregion
+
+    //region ===== Scroll to next section =====
+    $(".next-step").on("click", function (e) {
+        e.preventDefault();
+
+        $("html, body").animate({
+            scrollTop: $(this.hash).offset().top
+        }, animateDuration);
+    });
     //endregion
 
     //region ===== Utils =====
-    function welcomeHeight() {
-        $welcome.height($window.height());
+    function sectionsHeight() {
+        $sections.height($window.height());
     }
     //endregion
 

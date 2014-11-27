@@ -1,3 +1,11 @@
+/*===== Variables =====*/
+$left-to-right = left-to-right
+$right-to-left = left-to-right
+$fade = fade
+$upwards = upwards
+$downwards = downwards
+$animation-delay = .5s
+
 /*===== Mixin =====*/
 border-radius()
   -webkit-border-radius arguments
@@ -9,19 +17,26 @@ box-shadow()
   -moz-box-shadow arguments
   box-shadow arguments
 
-transition()
-  -webkit-transition: arguments
-  -moz-transition: arguments
-  -ms-transition: arguments
-  -o-transition: arguments
-  transition: arguments
+transition(property)
+  if property == "none"
+    -webkit-transition: property
+    -moz-transition: property
+    -ms-transition: property
+    -o-transition: property
+    transition: property
+  else
+    -webkit-transition: property $animation-delay
+    -moz-transition: property $animation-delay
+    -ms-transition: property $animation-delay
+    -o-transition: property $animation-delay
+    transition: property $animation-delay
 
 transform()
-  -webkit-transform-style: arguments
-  -moz-transform-style: arguments
-  -o-transform-style: arguments
-  -ms-transform-style: arguments
-  transform-style: arguments
+  -webkit-transform arguments
+  -moz-transform arguments
+  -o-transform arguments
+  -ms-transform arguments
+  transform arguments
 
 animation()
   -webkit-animation: arguments
@@ -32,41 +47,221 @@ animation()
 title-font(size)
   font 300 size "Open Sans Condensed", sans-serif
 
-/*===== Variables =====*/
-$left-to-right = left-to-right
-$right-to-left = left-to-right
-$fade = fade
-$upwards = upwards
-$downwards = downwards
+section-titles(border-color, color)
+  padding 55px 0 70px
+  text-align center
+  h3
+    position relative
+    width 600px
+    margin 0 auto
+    border-bottom 2px solid border-color
+    title-font(64px)
+    letter-spacing .1em
+    line-height 100px
+    text-transform uppercase
+    color color
+    &:after
+      content ""
+      position absolute
+      bottom -16px
+      left 50%
+      margin 0 0 0 -14px
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 14px 14px 0 14px;
+      border-color: border-color transparent transparent transparent;
 
+fixed-backgrounds(image-url)
+  background image-url top center no-repeat
+  background-size cover
+  background-attachment fixed
 /*===== Default classes =====*/
 body
-    font 16px "Open Sans", sans-serif
+  font 16px "Open Sans", sans-serif
 
 .content-center
-    width 940px
-    margin 0 auto
+  width 940px
+  margin 0 auto
+
+.wrapper
+  > section
+    position relative
+    article
+      line-height 1.5em
+
+.next-step
+  position absolute
+  left 50%
+  bottom 30px
+  margin 0 0 0 -14px
+  title-font(44px)
+  text-align center
+  color #fff
+  span
+  i
+    display block
+    position relative
+    z-index 10
+  span
+    margin 15px 0 0
+  i
+    opacity .5
+    transition(all)
+  &:hover
+  &:focus
+    color #fff
+    text-decoration none
+    i
+      opacity 1
+  &.about-step
+    bottom 70px
+    width 212px
+    height 106px
+    margin 0 0 0 -106px
+    title-font(22px)
+    i
+      opacity 1
+    &:before
+      content ""
+      position absolute
+      top 0
+      left 0
+      width 0
+      height 0
+      border-style solid
+      border-width 106px 106px 0 106px
+      border-color rgba(0, 0, 0, .5) transparent transparent transparent
+      transition(all)
+    &:hover
+    &:focus
+      &:before
+        border-color rgba(0, 0, 0, .7) transparent transparent transparent
+      i
+        padding 10px 0 0
 
 /*===== Welcome block =====*/
 
 .welcome
-    background url("../img/welcome.jpg") 50% 50% no-repeat
+  fixed-backgrounds(url("../img/welcome.jpg"))
 
 .header
-    overflow hidden
+  overflow hidden
+  position relative
+  padding 190px 0 0
+
+.logo
+  margin 0 15px 0 0
+
+.header-right-wrap
+  overflow hidden
 
 .slogan
+  margin 0 0 20px
   title-font(48px)
+  letter-spacing .1em
+  line-height .8em
   text-transform uppercase
   color #fff
   span
     display block
     opacity .5
-/*.asd*/
-  /*animation($keyframe-name 800ms ease-out)*/
 
-/*===== Animations =====*/
-/*@keyframes {$keyframe-name}*/
-  /*for i in 0..10*/
-    /*{10% * i}*/
-      /*opacity (i/10)*/
+.values-list
+.social-links-list
+  overflow hidden
+  margin 0
+  padding 0
+  list-style none
+
+.value-item
+  float left
+  margin 0 25px 0 0
+  &:last-child
+    margin 0
+
+.value-link
+  title-font(18px)
+  color rgba(255, 255, 255, 1)
+  transition(color)
+  span
+    display block
+    opacity .5
+    title-font(14px)
+    transition(opacity)
+  &:hover
+  &:focus
+    text-decoration none
+    span
+      opacity 1
+
+.social-links-wrap
+  position absolute
+  top 25px
+  right 25px
+
+.social-links-list
+  overflow visible
+
+.social-link-item
+  float left
+  margin 0 5px 0 0
+  &:last-child
+    margin 0
+  .social-link
+    display block
+    width 20px
+    height 20px
+    background url("../img/social-icons-sprite@2x.png") no-repeat
+    background-size 69px 20px
+    text-indent -9999px
+    transition(all)
+    &:hover
+    &:focus
+      transform(scale(1.2))
+      /*transform(rotateY(360deg))*/
+  &.fb
+    .social-link
+      background-position 0 0
+  &.vk
+    .social-link
+      background-position -25px 0
+  &.tw
+    .social-link
+      background-position -49px 0
+
+.about
+  fixed-backgrounds(url("../img/about-bg.jpg"))
+  .title
+    section-titles(rgba(255, 255, 255, .3), #fff)
+  article
+    color #fff
+
+.after-about
+  fixed-backgrounds(url("../img/after-about.jpg"))
+
+.goals
+  fixed-backgrounds(url("../img/goals-bg.jpg"))
+  .title
+    section-titles(#85B200, #444)
+  article
+    color #444
+
+.after-goals
+  fixed-backgrounds(url("../img/after-goals.jpg"))
+
+.manifest-goals
+  fixed-backgrounds(url("../img/manifest-goals-bg.jpg"))
+  .title
+    section-titles(rgba(255, 255, 255, .3), #fff)
+  article
+    color #fff
+    h4
+    ul
+      margin 0 0 30px
+    h4
+      title-font(28px)
+    li
+      font-size 14px
+    p
+      font-size 16px
