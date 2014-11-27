@@ -1,7 +1,8 @@
 jQuery(function ($) {
 
     //region ===== Variables =====
-    var windowHeight = $(window).height();
+    var $window = $(window),
+        $welcome = $("#welcome");
     //endregion
 
     //region ========== Scroll to the top of the page ==========
@@ -15,7 +16,15 @@ jQuery(function ($) {
     //endregion
 
     //region ===== Calculate welcome block height =====
-    $("#welcome").height(windowHeight);
+    welcomeHeight();
+
+    $window.resize(welcomeHeight);
+    //endregion
+
+    //region ===== Utils =====
+    function welcomeHeight() {
+        $welcome.height($window.height());
+    }
     //endregion
 
 });
