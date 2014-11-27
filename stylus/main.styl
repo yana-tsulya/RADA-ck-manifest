@@ -29,6 +29,9 @@ animation()
   -o-animation: arguments
   animation: arguments
 
+title-font(size)
+  font 300 size "Open Sans Condensed", sans-serif
+
 /*===== Variables =====*/
 $left-to-right = left-to-right
 $right-to-left = left-to-right
@@ -53,9 +56,12 @@ body
     overflow hidden
 
 .slogan
-  font-size 48px
+  title-font(48px)
+  text-transform uppercase
+  color #fff
   span
     display block
+    opacity .5
 /*.asd*/
   /*animation($keyframe-name 800ms ease-out)*/
 
