@@ -1,10 +1,10 @@
 /*===== Variables =====*/
+$animation-delay = .5s
 $left-to-right = left-to-right
 $right-to-left = left-to-right
 $fade = fade
 $upwards = upwards
 $downwards = downwards
-$animation-delay = .5s
 
 /*===== Mixin =====*/
 border-radius()
@@ -76,6 +76,7 @@ fixed-backgrounds(image-url)
   background image-url top center no-repeat
   background-size cover
   background-attachment fixed
+
 /*===== Default classes =====*/
 body
   font 16px "Open Sans", sans-serif
@@ -142,8 +143,30 @@ body
 
 /*===== Welcome block =====*/
 
+.loading-wrap
+  &:before
+    content ""
+    position: absolute;
+    top 0
+    left 0
+    right 0
+    bottom 0
+    width 100%
+    height 100%
+    opacity .5
+  .fa
+    position: absolute;
+    top 50%
+    left 50%
+    font-size 52px
+    color #0087C7
+
+.loading-wrap:before
 .welcome
   fixed-backgrounds(url("../img/welcome.jpg"))
+
+.welcome
+  /*animation($left-to-right $animation-delay ease-in-out)*/
 
 .header
   overflow hidden
@@ -265,3 +288,36 @@ body
       font-size 14px
     p
       font-size 16px
+
+.footer
+  a
+    title-font(22px)
+    font-weight 600
+    color #DA4444
+    &:hover
+      color #23527c
+      text-decoration none
+  .next-page
+    line-height 1em
+    span
+      display block
+      title-font(14px)
+      opacity .5
+
+.next-page-wrap
+  overflow hidden
+  padding 35px 0
+  background #f1f1f1
+
+.logo-small-wrap
+  padding 25px 0 40px
+  text-align center
+  .copyright
+    margin 5px 0 0
+    font-size 12px
+    color #d6d6d6
+
+@keyframes {$left-to-right}
+  for i in 0..10
+    {15% * i}
+      transform(translate(-(150/i)px, 0))

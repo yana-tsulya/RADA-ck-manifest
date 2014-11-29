@@ -32,6 +32,18 @@ jQuery(function ($) {
     });
     //endregion
 
+    //region ===== Hide loading-wrap on image load =====
+//    $("body").css("overflow", "hidden");
+
+    imagesLoaded(
+        document.querySelector('.wrapper'),
+        function( instance ) {
+//            $(".loading-wrap").hide();
+//            $("body").css("overflow", "auto");
+        }
+    );
+    //endregion
+
     //region ===== Utils =====
     function sectionsHeight() {
         $sections.height($window.height());

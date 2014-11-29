@@ -11,6 +11,11 @@
 <body>
 
     <div class="wrapper">
+
+        <!--<section class="loading-wrap">-->
+            <!--<i class="fa fa-refresh fa-spin"></i>-->
+        <!--</section>-->
+
         <section id="welcome" class="welcome">
             <header class="header content-center">
                 <h1 class="pull-left logo">
@@ -127,12 +132,28 @@
         </section>
 
         <footer class="footer">
-            <a class="upward" href="#">Нагору</a>
+            <div class="next-page-wrap">
+                <div class="content-center">
+                    <a class="upward pull-left" href="#">
+                        <i class="fa fa-angle-double-up"></i>
+                        Нагору
+                    </a>
+                    <a class="next-page pull-right" href="#">
+                        <span>Цінність 1</span>
+                        Спілкування людей <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="logo-small-wrap">
+                <img src="img/small-logo.png" width="33" height="45" alt=""/>
+                <div class="copyright">Черкаська міська рада, 2014 рік</div>
+            </div>
         </footer>
     </div>
 
     <script src="js/lib/jquery/dist/jquery.min.js"></script>
     <script src="js/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/lib/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
