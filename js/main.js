@@ -2,6 +2,7 @@ jQuery(function ($) {
 
     //region ===== Variables =====
     var $window = $(window),
+        $header = $(".header"),
         $sections = $(".wrapper > section"),
         animateDuration = 800;
     //endregion
@@ -32,16 +33,11 @@ jQuery(function ($) {
     });
     //endregion
 
-    //region ===== Hide loading-wrap on image load =====
-//    $("body").css("overflow", "hidden");
-
-    imagesLoaded(
-        document.querySelector('.wrapper'),
-        function( instance ) {
-//            $(".loading-wrap").hide();
-//            $("body").css("overflow", "auto");
-        }
-    );
+    //region ===== Element is visible =====
+    $("#about-cherkassy").addClass("hidden").viewportChecker({
+        classToAdd: 'visible animated fadeIn bounceOutLeft',
+        offset: 100
+    });
     //endregion
 
     //region ===== Utils =====

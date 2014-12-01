@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.1",
     "fontawesome": "~4.2.0",
     "jquery": "~2.1.1",
-    "imagesloaded": "~3.1.8"
+    "jquery-viewport-checker": "~1.7.4",
+    "animate.css": "~3.2.0"
   }
 }

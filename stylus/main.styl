@@ -140,7 +140,6 @@ body
         border-color rgba(0, 0, 0, .7) transparent transparent transparent
       i
         padding 10px 0 0
-
 /*===== Welcome block =====*/
 
 .loading-wrap
@@ -164,9 +163,6 @@ body
 .loading-wrap:before
 .welcome
   fixed-backgrounds(url("../img/welcome.jpg"))
-
-.welcome
-  /*animation($left-to-right $animation-delay ease-in-out)*/
 
 .header
   overflow hidden
@@ -316,8 +312,3 @@ body
     margin 5px 0 0
     font-size 12px
     color #d6d6d6
-
-@keyframes {$left-to-right}
-  for i in 0..10
-    {15% * i}
-      transform(translate(-(150/i)px, 0))
