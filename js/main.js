@@ -33,16 +33,35 @@ jQuery(function ($) {
     });
     //endregion
 
-    //region ===== Element is visible =====
-    $("#about-cherkassy").addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated fadeIn bounceOutLeft',
-        offset: 100
-    });
+    //region ===== Animate elements =====
+    animateElementsInViewport("#about-cherkassy", "fadeIn rollIn", "fadeIn flipInX");
+    animateElementsInViewport("#goals", "bounceInLeft", "bounceInRight");
+    animateElementsInViewport("#manifest-goals", "bounceInLeft", "bounceInUp");
     //endregion
 
     //region ===== Utils =====
     function sectionsHeight() {
         $sections.height($window.height());
+    }
+
+    function animateElementsInViewport(sectionId, headerAnimationClass, articleAnimationClass) {
+        $(sectionId)
+            .find("header")
+            .viewportChecker({
+                classToRemove: 'invisible',
+                classToAdd: 'visible animated ' + headerAnimationClass,
+                offset: 0
+            })
+        ;
+
+        $(sectionId)
+            .find("article")
+            .viewportChecker({
+                classToRemove: 'invisible',
+                classToAdd: 'visible animated ' + articleAnimationClass,
+                offset: 0
+            })
+        ;
     }
     //endregion
 
