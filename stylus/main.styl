@@ -19,17 +19,17 @@ box-shadow()
 
 transition(property)
   if property == "none"
-    -webkit-transition: property
-    -moz-transition: property
-    -ms-transition: property
-    -o-transition: property
-    transition: property
+    -webkit-transition property
+    -moz-transition property
+    -ms-transition property
+    -o-transition property
+    transition property
   else
-    -webkit-transition: property $animation-delay
-    -moz-transition: property $animation-delay
-    -ms-transition: property $animation-delay
-    -o-transition: property $animation-delay
-    transition: property $animation-delay
+    -webkit-transition property $animation-delay
+    -moz-transition property $animation-delay
+    -ms-transition property $animation-delay
+    -o-transition property $animation-delay
+    transition property $animation-delay
 
 transform()
   -webkit-transform arguments
@@ -39,10 +39,10 @@ transform()
   transform arguments
 
 animation()
-  -webkit-animation: arguments
-  -moz-animation: arguments
-  -o-animation: arguments
-  animation: arguments
+  -webkit-animation arguments
+  -moz-animation arguments
+  -o-animation arguments
+  animation arguments
 
 title-font(size)
   font 300 size "Open Sans Condensed", sans-serif
@@ -66,11 +66,11 @@ section-titles(border-color, color)
       bottom -16px
       left 50%
       margin 0 0 0 -14px
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 14px 14px 0 14px;
-      border-color: border-color transparent transparent transparent;
+      width 0
+      height 0
+      border-style solid
+      border-width 14px 14px 0 14px
+      border-color border-color transparent transparent transparent
 
 fixed-backgrounds(image-url)
   background image-url top center no-repeat
@@ -90,6 +90,11 @@ body
     position relative
     article
       line-height 1.5em
+
+.header-wrapper
+  &
+  *
+    transition(all)
 
 .next-step
   position absolute
@@ -142,32 +147,22 @@ body
         padding 10px 0 0
 /*===== Welcome block =====*/
 
-.loading-wrap
-  &:before
-    content ""
-    position: absolute;
-    top 0
-    left 0
-    right 0
-    bottom 0
-    width 100%
-    height 100%
-    opacity .5
-  .fa
-    position: absolute;
-    top 50%
-    left 50%
-    font-size 52px
-    color #0087C7
-
-.loading-wrap:before
 .welcome
+  z-index 15
   fixed-backgrounds(url("../img/welcome.jpg"))
+
+.header-wrapper
+  position absolute
+  top 0
+  left 0
+  right 0
 
 .header
   overflow hidden
   position relative
   padding 190px 0 0
+  .content-center
+    position relative
 
 .logo
   margin 0 15px 0 0
@@ -216,7 +211,7 @@ body
 
 .social-links-wrap
   position absolute
-  top 25px
+  top -165px
   right 25px
 
 .social-links-list
@@ -248,6 +243,32 @@ body
   &.tw
     .social-link
       background-position -49px 0
+
+.fix-header
+  .welcome
+    padding 362px 0 0
+  .header-wrapper
+    position fixed
+    z-index 500
+    width 100%
+    padding 15px 0 0
+    background #005f8c
+    box-shadow(0 3px 0 rgba(0, 0, 0, .3))
+  .header
+    overflow visible
+    padding 0
+  .logo
+    margin 0 15px -30px 0
+    img
+      width 82px
+      height 113px
+  .slogan
+    font-size 16px
+    span
+      display inline-block
+      margin 0 10px 0 0
+  .social-links-wrap
+    top 15px
 
 .about
   fixed-backgrounds(url("../img/about-bg.jpg"))

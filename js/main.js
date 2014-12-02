@@ -2,7 +2,7 @@ jQuery(function ($) {
 
     //region ===== Variables =====
     var $window = $(window),
-        $header = $(".header"),
+        $wrapper = $(".wrapper"),
         $sections = $(".wrapper > section"),
         animateDuration = 800;
     //endregion
@@ -28,20 +28,31 @@ jQuery(function ($) {
         e.preventDefault();
 
         $("html, body").animate({
-            scrollTop: $(this.hash).offset().top
+            scrollTop: $(this.hash).offset().top - 98
         }, animateDuration);
     });
     //endregion
 
     //region ===== Animate elements =====
-    animateElementsInViewport("#about-cherkassy", "fadeIn rollIn", "fadeIn flipInX");
+    animateElementsInViewport("#about-cherkassy", "fadeIn flipInY", "fadeIn flipInY");
     animateElementsInViewport("#goals", "bounceInLeft", "bounceInRight");
     animateElementsInViewport("#manifest-goals", "bounceInLeft", "bounceInUp");
     //endregion
 
+    //region ===== Fixed header on scroll =====
+    $(window).on("scroll", function() {
+        if ($(window).scrollTop() > 190) {
+            $wrapper.addClass("fix-header");
+        } else {
+            $wrapper.removeClass("fix-header");
+        }
+    });
+    //endregion
+
     //region ===== Utils =====
     function sectionsHeight() {
-        $sections.height($window.height());
+        $sections.not("#welcome").height($window.height() - 98);
+        $("#welcome").height($window.height());
     }
 
     function animateElementsInViewport(sectionId, headerAnimationClass, articleAnimationClass) {
