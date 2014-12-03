@@ -1,10 +1,5 @@
 /*===== Variables =====*/
 $animation-delay = .5s
-$left-to-right = left-to-right
-$right-to-left = left-to-right
-$fade = fade
-$upwards = upwards
-$downwards = downwards
 
 /*===== Mixin =====*/
 border-radius()
@@ -90,11 +85,6 @@ body
     position relative
     article
       line-height 1.5em
-
-.header-wrapper
-  &
-  *
-    transition(all)
 
 .next-step
   position absolute
@@ -306,6 +296,17 @@ body
     p
       font-size 16px
 
+.internal-page
+  .welcome
+    height 310px !important
+    padding 0
+    fixed-backgrounds(url("../img/welcome.jpg"))
+    .to-main-page
+      margin 160px 0 0
+      title-font(16px)
+      font-weight 700
+      color #fff
+
 .footer
   a
     title-font(22px)
@@ -332,4 +333,4 @@ body
   .copyright
     margin 5px 0 0
     font-size 12px
-    color #d6d6d6
+    color #d6d6d67

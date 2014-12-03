@@ -40,13 +40,15 @@ jQuery(function ($) {
     //endregion
 
     //region ===== Fixed header on scroll =====
-    $(window).on("scroll", function() {
-        if ($(window).scrollTop() > 190) {
-            $wrapper.addClass("fix-header");
-        } else {
-            $wrapper.removeClass("fix-header");
-        }
-    });
+    if ($wrapper.hasClass("main-page")) {
+        $(window).on("scroll", function() {
+                if ($(window).scrollTop() > 500) {
+                    $wrapper.addClass("fix-header");
+                } else {
+                    $wrapper.removeClass("fix-header");
+                }
+        });
+    }
     //endregion
 
     //region ===== Utils =====
