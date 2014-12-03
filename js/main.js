@@ -17,12 +17,6 @@ jQuery(function ($) {
     });
     //endregion
 
-    //region ===== Calculate welcome block height =====
-    sectionsHeight();
-
-    $window.resize(sectionsHeight);
-    //endregion
-
     //region ===== Scroll to next section =====
     $(".next-step").on("click", function (e) {
         e.preventDefault();
@@ -39,16 +33,23 @@ jQuery(function ($) {
     animateElementsInViewport("#manifest-goals", "bounceInLeft", "bounceInUp");
     //endregion
 
-    //region ===== Fixed header on scroll =====
-    if ($wrapper.hasClass("main-page")) {
-        $(window).on("scroll", function() {
+    //region ===== Only for main page =====
+        //region ===== Fixed header on scroll =====
+        if ($wrapper.hasClass("main-page")) {
+            $(window).on("scroll", function() {
                 if ($(window).scrollTop() > 500) {
                     $wrapper.addClass("fix-header");
                 } else {
                     $wrapper.removeClass("fix-header");
                 }
-        });
-    }
+            });
+
+            //region ===== Calculate welcome block height =====
+            sectionsHeight();
+            $window.resize(sectionsHeight);
+            //endregion
+        }
+        //endregion
     //endregion
 
     //region ===== Utils =====
