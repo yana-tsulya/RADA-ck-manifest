@@ -1,15 +1,19 @@
 RADA-ck-manifest
 ================
 
-Cherkassy manifest
+# Cherkassy manifest
 
-BOWER
+## Dependencies
+
+### Node
 * stylus
+
+### Bower
 * jquery
 * bootstrap
 * fontawesome
 * jquery-viewport-checker
 * animate.css
 
-Stylus
+### Stylus
 * stylus -w stylus/main.styl --out css/ --compress
