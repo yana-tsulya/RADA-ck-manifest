@@ -1,6 +1,3 @@
-RADA-ck-manifest
-================
-
 # Cherkassy manifest
 
 ## Dependencies
