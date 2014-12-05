@@ -43,7 +43,7 @@ title-font(size)
   font 300 size "Open Sans Condensed", sans-serif
 
 section-titles(border-color, color)
-  padding 55px 0 70px
+  padding 0 0 70px
   text-align center
   h3
     position relative
@@ -67,13 +67,11 @@ section-titles(border-color, color)
       border-width 14px 14px 0 14px
       border-color border-color transparent transparent transparent
 
-fixed-background(image-url)
-  background image-url top center no-repeat
-  background-size cover
-  background-attachment fixed
-
 normal-background(image-url)
   background image-url top center no-repeat
+  -webkit-background-size cover
+  -moz-background-size cover
+  -o-background-size cover
   background-size cover
   
 /*===== Default classes =====*/
@@ -87,6 +85,7 @@ body
 .wrapper
   > section
     position relative
+    padding 50px 0 70px
     article
       line-height 1.5em
 
@@ -106,14 +105,16 @@ body
   span
     margin 15px 0 0
   i
-    opacity .5
+    color rgba(255, 255, 255, .5)
     transition(all)
+    -webkit-transform translate3d(0,0,0)
+    -webkit-backface-visibility hidden
   &:hover
   &:focus
     color #fff
     text-decoration none
     i
-      opacity 1
+      color #fff
   &.about-step
     bottom 70px
     width 212px
@@ -121,7 +122,7 @@ body
     margin 0 0 0 -106px
     title-font(22px)
     i
-      opacity 1
+      color #fff
     &:before
       content ""
       position absolute
@@ -133,6 +134,8 @@ body
       border-width 106px 106px 0 106px
       border-color rgba(0, 0, 0, .5) transparent transparent transparent
       transition(all)
+      -webkit-transform translate3d(0,0,0)
+      -webkit-backface-visibility hidden
     &:hover
     &:focus
       &:before
@@ -142,8 +145,9 @@ body
 /*===== Welcome block =====*/
 
 .welcome
+  padding 0 !important
   z-index 15
-  fixed-background(url("../img/welcome.jpg"))
+  normal-background(url("../img/welcome.jpg"))
 
 .header-wrapper
   position absolute
@@ -173,7 +177,7 @@ body
   color #fff
   span
     display block
-    opacity .5
+    color rgba(255, 255, 255, .5)
 
 .values-list
 .social-links-list
@@ -190,19 +194,19 @@ body
 
 .value-link
   title-font(18px)
-  color rgba(255, 255, 255, 1)
+  color #fff
   transition(color)
   span
     display block
-    opacity .5
+    color rgba(255, 255, 255, .5)
     title-font(14px)
-    transition(opacity)
+    transition(color)
   &:hover
   &:focus
     text-decoration none
     color #fff
     span
-      opacity 1
+      color #fff
 
 .social-links-wrap
   position absolute
@@ -225,6 +229,8 @@ body
     background-size 69px 20px
     text-indent -9999px
     transition(all)
+    -webkit-transform translate3d(0,0,0)
+    -webkit-backface-visibility hidden
     &:hover
     &:focus
       transform(scale(1.2))
@@ -266,27 +272,27 @@ body
     top 15px
 
 .about
-  fixed-background(url("../img/about-bg.jpg"))
+  normal-background(url("../img/about-bg.jpg"))
   .title
     section-titles(rgba(255, 255, 255, .3), #fff)
   article
     color #fff
 
 .after-about
-  fixed-background(url("../img/after-about.jpg"))
+  normal-background(url("../img/after-about.jpg"))
 
 .goals
-  fixed-background(url("../img/goals-bg.jpg"))
+  normal-background(url("../img/goals-bg.jpg"))
   .title
     section-titles(#85B200, #444)
   article
     color #444
 
 .after-goals
-  fixed-background(url("../img/after-goals.jpg"))
+  normal-background(url("../img/after-goals.jpg"))
 
 .manifest-goals
-  fixed-background(url("../img/manifest-goals-bg.jpg"))
+  normal-background(url("../img/manifest-goals-bg.jpg"))
   .title
     section-titles(rgba(255, 255, 255, .3), #fff)
   article
@@ -355,9 +361,8 @@ body
         opacity .5
         title-font(18px)
 
-.sub-value-1
+.sub-value
   padding 80px 0 45px
-  background #f6f6f6
   .title
     h2
       margin 0 0 25px
@@ -371,6 +376,31 @@ body
   article
     p
       color #444 !important
+
+.sub-value-1
+.sub-value-3
+  background #f6f6f6
+
+.sub-value-2
+  background #e5e5e5
+
+.now-after-wrap
+  .now-wrap
+    float left
+  .after-wrap
+    float right
+  aside
+    header
+      margin 0 0 15px
+      title-font(22px)
+      font-weight 700
+      text-align center
+      color #000
+    figcaption
+      title-font(13px)
+      font-style italic
+      color #777
+
 .footer
   a
     title-font(22px)
