@@ -32,7 +32,7 @@ jQuery(function ($) {
         .viewportChecker({
             classToRemove: "transparent",
             classToAdd: "untransparent animated fadeIn",
-            offset: 400
+            offset: 0
         })
     ;
     //endregion
@@ -45,7 +45,9 @@ jQuery(function ($) {
                     $wrapper
                         .addClass("fix-header")
                         .find(".header-wrapper")
-                        .css("top", 0)
+                        .animate({
+                            "top": 0
+                        }, animateDuration)
                     ;
                 } else {
                     $wrapper
@@ -65,10 +67,6 @@ jQuery(function ($) {
 
     //region ===== Utils =====
     function sectionsHeight() {
-        $sections
-            .not("#welcome")
-            .css("min-height", $window.height() - 98)
-        ;
         $("#welcome").css("min-height", $window.height());
     }
     //endregion
