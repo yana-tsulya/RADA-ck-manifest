@@ -28,9 +28,19 @@ jQuery(function ($) {
     //endregion
 
     //region ===== Animate elements =====
-    animateElementsInViewport("#about-cherkassy", "fadeIn flipInY", "fadeIn flipInY");
-    animateElementsInViewport("#goals", "bounceInLeft", "bounceInRight");
-    animateElementsInViewport("#manifest-goals", "bounceInLeft", "bounceInUp");
+    $sections
+        .not(".after-section")
+        .viewportChecker({
+            classToRemove: "invisible",
+            classToAdd: "visible animated fadeIn",
+            offset: 250
+        })
+//            .one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", removeAnimateClasses)
+    ;
+
+//    function removeAnimateClasses() {
+//        $(this).removeClass("visible animated fadeIn");
+//    }
     //endregion
 
     //region ===== Only for main page =====
@@ -59,26 +69,6 @@ jQuery(function ($) {
             .css("min-height", $window.height() - 98)
         ;
         $("#welcome").height($window.height());
-    }
-
-    function animateElementsInViewport(sectionId, headerAnimationClass, articleAnimationClass) {
-        $(sectionId)
-            .find("header")
-            .viewportChecker({
-                classToRemove: 'invisible',
-                classToAdd: 'visible animated ' + headerAnimationClass,
-                offset: 0
-            })
-        ;
-
-        $(sectionId)
-            .find("article")
-            .viewportChecker({
-                classToRemove: 'invisible',
-                classToAdd: 'visible animated ' + articleAnimationClass,
-                offset: 0
-            })
-        ;
     }
     //endregion
 

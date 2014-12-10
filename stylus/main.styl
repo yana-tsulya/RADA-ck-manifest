@@ -67,8 +67,15 @@ section-titles(border-color, color)
       border-width 14px 14px 0 14px
       border-color border-color transparent transparent transparent
 
+fixed-background(image-url)
+  background image-url 50% 0 fixed no-repeat
+  -webkit-background-size cover
+  -moz-background-size cover
+  -o-background-size cover
+  background-size cover
+
 normal-background(image-url)
-  background image-url top center no-repeat
+  background image-url 50% 0 no-repeat
   -webkit-background-size cover
   -moz-background-size cover
   -o-background-size cover
@@ -142,12 +149,18 @@ body
         border-color rgba(0, 0, 0, .7) transparent transparent transparent
       i
         padding 10px 0 0
-/*===== Welcome block =====*/
 
+/*===== Wrapper =====*/
+
+.wrapper
+  overflow hidden
+  width 100%
+
+/*===== Welcome block =====*/
 .welcome
   padding 0 !important
   z-index 15
-  normal-background(url("../img/welcome.jpg"))
+  fixed-background(url("../img/welcome.jpg"))
 
 .header-wrapper
   position absolute
@@ -272,27 +285,27 @@ body
     top 15px
 
 .about
-  normal-background(url("../img/about-bg.jpg"))
+  fixed-background(url("../img/about-bg.jpg"))
   .title
     section-titles(rgba(255, 255, 255, .3), #fff)
   article
     color #fff
 
 .after-about
-  normal-background(url("../img/after-about.jpg"))
+  fixed-background(url("../img/after-about.jpg"))
 
 .goals
-  normal-background(url("../img/goals-bg.jpg"))
+  fixed-background(url("../img/goals-bg.jpg"))
   .title
     section-titles(#85B200, #444)
   article
     color #444
 
 .after-goals
-  normal-background(url("../img/after-goals.jpg"))
+  fixed-background(url("../img/after-goals.jpg"))
 
 .manifest-goals
-  normal-background(url("../img/manifest-goals-bg.jpg"))
+  fixed-background(url("../img/manifest-goals-bg.jpg"))
   .title
     section-titles(rgba(255, 255, 255, .3), #fff)
   article
