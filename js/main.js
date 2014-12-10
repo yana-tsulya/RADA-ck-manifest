@@ -29,11 +29,10 @@ jQuery(function ($) {
 
     //region ===== Animate elements =====
     $sections
-        .not(".after-section")
         .viewportChecker({
-            classToRemove: "invisible animated fadeIn",
-            classToAdd: "visible animated fadeIn",
-            offset: 250
+            classToRemove: "transparent",
+            classToAdd: "untransparent animated fadeIn",
+            offset: 400
         })
     ;
     //endregion
@@ -43,9 +42,16 @@ jQuery(function ($) {
         if ($wrapper.hasClass("main-page")) {
             $(window).on("scroll", function() {
                 if ($(window).scrollTop() > 500) {
-                    $wrapper.addClass("fix-header");
+                    $wrapper
+                        .addClass("fix-header")
+                        .find(".header-wrapper")
+                        .css("top", 0)
+                    ;
                 } else {
-                    $wrapper.removeClass("fix-header");
+                    $wrapper
+                        .removeClass("fix-header")
+//                        .css("top", 0)
+                    ;
                 }
             });
 
@@ -59,8 +65,11 @@ jQuery(function ($) {
 
     //region ===== Utils =====
     function sectionsHeight() {
-        $(".after-section").height($window.height());
-        $("#welcome").height($window.height());
+        $sections
+            .not("#welcome")
+            .css("min-height", $window.height() - 98)
+        ;
+        $("#welcome").css("min-height", $window.height());
     }
     //endregion
 
