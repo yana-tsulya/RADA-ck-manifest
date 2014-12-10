@@ -31,16 +31,11 @@ jQuery(function ($) {
     $sections
         .not(".after-section")
         .viewportChecker({
-            classToRemove: "invisible",
+            classToRemove: "invisible animated fadeIn",
             classToAdd: "visible animated fadeIn",
             offset: 250
         })
-//            .one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", removeAnimateClasses)
     ;
-
-//    function removeAnimateClasses() {
-//        $(this).removeClass("visible animated fadeIn");
-//    }
     //endregion
 
     //region ===== Only for main page =====
@@ -64,10 +59,7 @@ jQuery(function ($) {
 
     //region ===== Utils =====
     function sectionsHeight() {
-        $sections
-            .not("#welcome")
-            .css("min-height", $window.height() - 98)
-        ;
+        $(".after-section").height($window.height());
         $("#welcome").height($window.height());
     }
     //endregion
