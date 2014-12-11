@@ -106,6 +106,8 @@ body
     position relative
     padding 50px 0 70px
     min-height 600px
+    &.after-section
+      min-height 400px
     article
       line-height 1.5em
 
@@ -346,16 +348,8 @@ body
       font-size 16px
 
 .internal-page
-  .welcome
-    height 310px
-    padding 0
-    normal-background(url("../img/welcome.jpg"))
-    background-position center center
-    .to-main-page
-      margin 160px 0 0 -130px
-      font-size 12px
-      color #fff
   > section
+    min-height initial
     .title
       h1
       h2
@@ -382,6 +376,17 @@ body
       p
         clear left
         color #fff
+  .welcome
+    height 310px
+    padding 0
+    normal-background(url("../img/welcome.jpg"))
+    background-position center center
+    .to-main-page
+      margin 160px 0 0 -130px
+      font-size 12px
+      color #fff
+    .header-wrapper
+      top 0
 
 .value-1
   padding 40px 0 70px

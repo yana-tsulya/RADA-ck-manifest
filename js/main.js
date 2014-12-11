@@ -67,6 +67,10 @@ jQuery(function ($) {
 
     //region ===== Utils =====
     function sectionsHeight() {
+        $sections
+            .not("#welcome, .after-section")
+            .css("min-height", $window.height() - 98)
+        ;
         $("#welcome").css("min-height", $window.height());
     }
     //endregion
