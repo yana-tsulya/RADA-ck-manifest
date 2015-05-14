@@ -251,8 +251,8 @@ body
 
 .social-links-wrap
   position absolute
-  top -165px
-  right 25px
+  top 25px
+  right 35px
 
 .social-links-list
   overflow visible
@@ -283,9 +283,27 @@ body
     .social-link
       background-position -49px 0
 
+.main-page .toggle-menu-icon
+.main-page .values-list > .value-item:first-child
+.main-page.fix-header .closed-menu .social-links-wrap
+  display none
+.main-page.fix-header
+  .toggle-menu-icon
+  .values-list > .value-item:first-child
+    display block
+
 .fix-header
   .welcome
     padding 362px 0 0
+
+  .toggle-menu-icon
+    position fixed
+    z-index 5
+    top 20px
+    left 20px
+    width 50px
+    height 50px
+    background url("../img/close-menu-icon.png") 0 0 no-repeat
   .header-wrapper
     overflow hidden
     position fixed
@@ -304,24 +322,17 @@ body
       .header .content-center
         width 0
         transition(all easy-out)
-
-  .toggle-menu-icon
-    position fixed
-    z-index 5
-    top 20px
-    left 20px
-    width 50px
-    height 50px
-    background url("../img/close-menu-icon.png") 0 0 no-repeat
   .header
     overflow visible
     padding 0
   .logo
+    display none
     margin 0 15px -30px 0
     img
       width 82px
       height 113px
   .slogan
+    display none
     font-size 16px
     span
       display inline-block
@@ -329,8 +340,6 @@ body
   .social-links-wrap
     position absolute
     z-index 502
-    top 25px
-    right 35px
     &.fixed
       position fixed
 .internal-page-nav
@@ -453,6 +462,9 @@ body
     .header-wrapper
       top 0
 
+.internal-page.page-1 .welcome
+  normal-background(url("../img/1-page-img/main.jpg"))
+
 .value-1
   padding 40px 0 70px
   normal-background(url("../img/value-1-bg.jpg"))
@@ -490,10 +502,11 @@ body
 .sub-value-2
   background #e5e5e5
 
-.now-after-wrap
-  .now-wrap
-    float left
-  .after-wrap
+.img-wrap
+  float left
+  width 450px
+  height 400px
+  &:nth-child(even)
     float right
   aside
     header

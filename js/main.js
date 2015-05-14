@@ -4,7 +4,8 @@ jQuery(function ($) {
     var $window = $(window),
         $wrapper = $(".wrapper"),
         $sections = $(".wrapper > section"),
-        animateDuration = 800;
+        animateDuration = 800,
+        mark = true;
     //endregion
 
     //region ========== Scroll to the top of the page ==========
@@ -42,6 +43,10 @@ jQuery(function ($) {
         if ($wrapper.hasClass("main-page")) {
             $(window).on("scroll", function() {
                 if ($(window).scrollTop() > 500) {
+                    if (mark) {
+                        $wrapper.find(".header-wrapper").addClass("closed-menu");
+                        mark = false;
+                    }
                     $wrapper
                         .addClass("fix-header")
                         .find(".header-wrapper")
@@ -54,6 +59,7 @@ jQuery(function ($) {
                         .removeClass("fix-header")
 //                        .css("top", 0)
                     ;
+                    mark = true;
                 }
             });
 
