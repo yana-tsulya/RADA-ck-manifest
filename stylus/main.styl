@@ -269,7 +269,6 @@ body
     background url("../img/social-icons-sprite@2x.png") no-repeat
     background-size 69px 20px
     text-indent -9999px
-    transition(all)
     &:hover
     &:focus
       transform(scale(1.2))
@@ -288,13 +287,32 @@ body
   .welcome
     padding 362px 0 0
   .header-wrapper
+    overflow hidden
     position fixed
     top -128px
     z-index 500
     width 100%
-    padding 15px 0 0
+    height 90px
+    padding 30px 0 20px
     background #005f8c
     box-shadow(0 3px 0 rgba(0, 0, 0, .3))
+    transition(all easy-out)
+    &.closed-menu
+      width 0
+      .toggle-menu-icon
+        background url("../img/menu-icon.png") 0 0 no-repeat
+      .header .content-center
+        width 0
+        transition(all easy-out)
+
+  .toggle-menu-icon
+    position fixed
+    z-index 5
+    top 20px
+    left 20px
+    width 50px
+    height 50px
+    background url("../img/close-menu-icon.png") 0 0 no-repeat
   .header
     overflow visible
     padding 0
@@ -309,8 +327,50 @@ body
       display inline-block
       margin 0 10px 0 0
   .social-links-wrap
-    top 15px
+    position absolute
+    z-index 502
+    top 25px
+    right 35px
+    &.fixed
+      position fixed
+.internal-page-nav
+  position absolute
+  bottom 0
+  right 0
+  width 100%
+  background rgba(0, 0, 0, 0.5)
+  height 120px
+  .pull-left
+  .pull-right
+    position relative
+    display inline-block
+    height 30px
+    padding 0 19px
+    margin 45px 25px
+    background rgba(0, 0, 0, 0.5)
+    font 700 12px/30px "PT Sans", sans-serif
+    color #fff
+    &:before
+      content ""
+      position absolute
+      top 0
+      width 0
+      height 0
+      border-top 15px solid transparent
+      border-bottom 15px solid transparent
+  .pull-left:before
+    left -15px
+    border-right 15px solid rgba(0, 0, 0, 0.5)
+  .pull-right:before
+    right -15px
+    border-left 15px solid rgba(0, 0, 0, 0.5)
 
+  h1
+    line-height 120px
+    margin 0
+    title-font(72px)
+    color #ffffff
+    text-align center
 .about
   fixed-background(url("../img/about-bg.jpg"))
   .title
@@ -354,12 +414,17 @@ body
       h1
       h2
         float left
+    &.value-1
+      normal-background(#fff)
+      article
+        p
+          color #000
     article
       overflow hidden
       width 100%
       .goals-list
         width 293px
-        margin 0
+        margin 0 0 25px 50px
         padding 20px 0 15px
         border-left 7px solid rgba(219, 31, 44 .7)
         list-style none
@@ -377,7 +442,7 @@ body
         clear left
         color #fff
   .welcome
-    height 310px
+    height 770px
     padding 0
     normal-background(url("../img/welcome.jpg"))
     background-position center center
@@ -443,6 +508,7 @@ body
       color #777
 
 .footer
+  position relative
   a
     title-font(22px)
     font-weight 600
@@ -450,22 +516,35 @@ body
     &:hover
       color #23527c
       text-decoration none
+    &.pull-left
+      margin-top 15px
   .next-page
+    text-align right
     line-height 1em
     span
       display block
+      margin-right 10px
       title-font(14px)
       opacity .5
+  .dev-logo
+    overflow hidden
+    position absolute
+    bottom 0
+    right 60px
+    display block
+    width 60px
+    height 31px
+    background url("../img/moc_logo.png") 0 0 no-repeat
+    text-indent -999px
 
 .next-page-wrap
   overflow hidden
   padding 35px 0
-  background #f1f1f1
 
 .logo-small-wrap
-  padding 25px 0 40px
+  padding 45px 0 10px
   text-align center
   .copyright
     margin 5px 0 0
     font-size 12px
-    color #d6d6d67
+    color #d6d6d6

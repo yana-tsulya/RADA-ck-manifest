@@ -5,6 +5,7 @@
     <title></title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,300&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="js/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="js/lib/fontawesome/css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="js/lib/animate.css/animate.min.css"/>
@@ -13,21 +14,31 @@
 </head>
 <body>
 
-	<div class="wrapper fix-header internal-page">
+	<div class="wrapper fix-header internal-page page-1">
 		<section class="welcome animated fadeIn">
-			<div class="header-wrapper">
+            <div class="social-links-wrap">
+                <ul class="social-links-list">
+                    <li class="social-link-item fb">
+                        <a class="social-link" href="#">Facebook</a>
+                    </li>
+                    <li class="social-link-item vk">
+                        <a class="social-link" href="#">Vkontakte</a>
+                    </li>
+                    <li class="social-link-item tw">
+                        <a class="social-link" href="#">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+			<div class="header-wrapper closed-menu">
+                <a class="toggle-menu-icon" id="toggle-menu" href="#"></a>
 				<header class="header">
 					<div class="content-center">
-						<div class="pull-left logo">
-							<a href="index.html">
-								<img src="img/logo.png" width="125" height="172" alt="Маніфест Черкаси - місто для людей"/>
-							</a>
-						</div>
 						<div class="header-right-wrap">
-							<h2 class="slogan"><span>Маніфест</span>Черкаси - місто для людей</h2>
-
 							<div class="values-list-wrap">
 								<ul class="values-list">
+                                    <li class="value-item">
+                                        <a class="value-link" href="index.html"><span>Маніфест</span> Головна сторінка</a>
+                                    </li>
 									<li class="value-item active">
 										<a class="value-link" href="value-1.html"><span>Цінність 1</span> Спілкування людей</a>
 									</li>
@@ -43,39 +54,23 @@
 								</ul>
 							</div>
 						</div>
-						<div class="social-links-wrap">
-							<ul class="social-links-list">
-								<li class="social-link-item fb">
-									<a class="social-link" href="#">Facebook</a>
-								</li>
-								<li class="social-link-item vk">
-									<a class="social-link" href="#">Vkontakte</a>
-								</li>
-								<li class="social-link-item tw">
-									<a class="social-link" href="#">Twitter</a>
-								</li>
-							</ul>
-						</div>
 					</div>
 				</header>
 			</div>
-			<div class="content-center">
-				<a class="to-main-page pull-left" href="index.html">
-					<i class="fa fa-angle-left"></i>
-					на головну
+			<div class="internal-page-nav">
+				<a class="pull-left" href="index.html">
+					На головну
 				</a>
+                <a class="pull-right" href="value-2.html">
+                    Наступна
+                </a>
+                <h1>Спілкування людей</h1>
 			</div>
 		</section>
 
 		<section class="value-1">
 			<div class="content-center">
 				<article>
-					<header class="title">
-						<h1>
-							<span>Цінність 1</span>
-							Спілкування людей
-						</h1>
-					</header>
 					<ul class="goals-list pull-right">
 						<li>
 							<p>Доступність громадського простору</p>
@@ -280,9 +275,9 @@
 		<footer class="footer">
 			<div class="next-page-wrap">
 				<div class="content-center">
-					<a class="pull-left" href="index.html">
-						<i class="fa fa-angle-left"></i>
-						На головну
+					<a class="pull-left" href="javascript:scroll(0,0)">
+                        <i class="fa fa-angle-double-up"></i>
+						Нагору
 					</a>
 					<a class="next-page pull-right" href="value-2.html">
 						<span>Цінність 2</span>
@@ -291,9 +286,10 @@
 				</div>
 			</div>
 			<div class="logo-small-wrap">
-				<img src="img/small-logo.png" width="33" height="45" alt=""/>
+				<img src="img/small-logo.png" width="30" height="41" alt=""/>
 				<div class="copyright">Черкаська міська рада, 2014 рік</div>
 			</div>
+            <a class="dev-logo" href="http://masterofcode.com/">Master of code</a>
 		</footer>
 	</div>
 

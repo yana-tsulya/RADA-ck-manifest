@@ -75,4 +75,10 @@ jQuery(function ($) {
     }
     //endregion
 
+    $("#toggle-menu").on("click", function(e) {
+        e.preventDefault();
+        $(this).parent().toggleClass("closed-menu");
+        $(this).parent().parent().find(".social-links-wrap").toggleClass("fixed");
+    })
+
 });
