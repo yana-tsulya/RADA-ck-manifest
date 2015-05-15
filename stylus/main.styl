@@ -272,6 +272,11 @@ body
     .social-link
       background-position -49px 0
 
+.internal-page .social-link-item .social-link
+  background-image url("../img/blue-social-icons-sprite@2x.png")
+.internal-page .fixed .social-link-item .social-link
+  background-image url("../img/social-icons-sprite@2x.png")
+
 .main-page .toggle-menu-icon
 .main-page .values-list > .value-item:first-child
 .main-page.fix-header .closed-menu .social-links-wrap
@@ -434,10 +439,14 @@ body
           padding 0 40px
           background url("../img/goals-list.png") 15px 50% no-repeat
         p
-          font-size 14px
-          font-weight 700
           line-height 1.2em
-          color #db1f2c !important
+          & > a
+            font-size 14px
+            font-weight 700
+            color #db1f2c
+            &:hover
+              color #337ab7
+              text-decoration none
       p
         clear left
         color #fff
@@ -501,6 +510,8 @@ body
 .sub-value-4
   background #e5e5e5
 
+.img-section
+  margin-top 30px
 .img-wrap
   float left
   width 450px
