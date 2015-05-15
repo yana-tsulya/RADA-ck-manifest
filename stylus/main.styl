@@ -47,25 +47,14 @@ section-titles(border-color, color)
   text-align center
   h3
     position relative
-    width 600px
+    display inline-block
     margin 0 auto
-    border-bottom 2px solid border-color
+    border-bottom 15px solid border-color
     title-font(64px)
     letter-spacing .1em
-    line-height 100px
+    line-height 110px
     text-transform uppercase
     color color
-    &:after
-      content ""
-      position absolute
-      bottom -16px
-      left 50%
-      margin 0 0 0 -14px
-      width 0
-      height 0
-      border-style solid
-      border-width 14px 14px 0 14px
-      border-color border-color transparent transparent transparent
 
 fixed-background(image-url)
   .section-image
@@ -143,7 +132,7 @@ body
   span
     margin 15px 0 0
   i
-    color rgba(255, 255, 255, .5)
+    color rgba(0, 0, 0, .2)
     transition(all)
   &:hover
   &:focus
@@ -385,9 +374,9 @@ body
 .about
   fixed-background(url("../img/about-bg.jpg"))
   .title
-    section-titles(rgba(255, 255, 255, .3), #fff)
+    section-titles(rgba(0, 0, 0, .1), #444)
   article
-    color #fff
+    color #444
 
 .after-about
   fixed-background(url("../img/after-about.jpg"))
@@ -395,7 +384,7 @@ body
 .goals
   fixed-background(url("../img/goals-bg.jpg"))
   .title
-    section-titles(#85B200, #444)
+    section-titles(rgba(0, 0, 0, .1), #444)
   article
     color #444
 
@@ -405,9 +394,9 @@ body
 .manifest-goals
   fixed-background(url("../img/manifest-goals-bg.jpg"))
   .title
-    section-titles(rgba(255, 255, 255, .3), #fff)
+    section-titles(rgba(0, 0, 0, .1), #444)
   article
-    color #fff
+    color #444
     h4
     ul
       margin 0 0 30px
