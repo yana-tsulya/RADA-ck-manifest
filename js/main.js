@@ -28,6 +28,16 @@ jQuery(function ($) {
     });
     //endregion
 
+    //region ===== Scroll to section on internal-page =====
+    $(".goals-list").find("a").on("click", function (e) {
+        e.preventDefault();
+
+        $("html, body").animate({
+            scrollTop: $(this.hash).offset().top - 98
+        }, animateDuration);
+    });
+    //endregion
+
     //region ===== Animate elements =====
     $sections
         .viewportChecker({
@@ -62,13 +72,13 @@ jQuery(function ($) {
                     mark = true;
                 }
             });
-
-            //region ===== Calculate welcome block height =====
-            sectionsHeight();
-            $window.resize(sectionsHeight);
-            //endregion
         }
         //endregion
+    //endregion
+
+    //region ===== Calculate welcome block height =====
+    sectionsHeight();
+    $window.resize(sectionsHeight);
     //endregion
 
     //region ===== Utils =====
