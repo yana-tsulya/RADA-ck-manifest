@@ -87,6 +87,15 @@ jQuery(function ($) {
             .not("#welcome, .after-section")
             .css("min-height", $window.height() - 98)
         ;
+        $sections
+            .not("#welcome, .after-section")
+            .each(function(){
+                var contentBlock = $(this).find(".content-center"),
+                    section = $(this);
+                if (contentBlock.height() < section.height()) {
+                    contentBlock.css("margin-top", (section.height() - contentBlock.height()) / 3);
+                }
+            });
         $("#welcome").css("min-height", $window.height());
     }
     //endregion
