@@ -93,14 +93,16 @@ body
 .wrapper
   > section
     position relative
-    padding 50px 0 70px
+    padding 150px 0 70px
     min-height 600px
     &.after-section
       min-height 400px
     article
       line-height 1.5em
     &.value-1
-      padding 90px 0
+      padding 150px 0
+    &.sub-value
+      padding 100px 0
 
 .transparent
   opacity 0
@@ -475,7 +477,6 @@ body
   normal-background(url("../img/4-page-img/main.jpg"))
 
 .value-1
-  padding 40px 0 70px
   normal-background(url("../img/value-1-bg.jpg"))
   .title
     h1
@@ -489,7 +490,6 @@ body
         title-font(18px)
 
 .sub-value
-  padding 80px 0 45px
   .title
     h2
       margin 0 0 25px
@@ -521,17 +521,10 @@ body
   height 400px
   &:nth-child(even)
     float right
-  aside
-    header
-      margin 0 0 15px
-      title-font(22px)
-      font-weight 700
-      text-align center
-      color #000
-    figcaption
-      title-font(13px)
-      font-style italic
-      color #777
+  figcaption
+    title-font(13px)
+    font-style italic
+    color #777
 
 .footer
   position relative

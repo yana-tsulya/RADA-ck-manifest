@@ -23,7 +23,7 @@ jQuery(function ($) {
         e.preventDefault();
 
         $("html, body").animate({
-            scrollTop: $(this.hash).offset().top - 98
+            scrollTop: $(this.hash).offset().top
         }, animateDuration);
     });
     //endregion
@@ -33,7 +33,7 @@ jQuery(function ($) {
         e.preventDefault();
 
         $("html, body").animate({
-            scrollTop: $(this.hash).offset().top - 98
+            scrollTop: $(this.hash).offset().top
         }, animateDuration);
     });
     //endregion
@@ -86,7 +86,7 @@ jQuery(function ($) {
         if ($wrapper.hasClass("main-page")) {
             $sections
                 .not("#welcome, .after-section")
-                .css("min-height", $window.height() - 98)
+                .css("min-height", $window.height())
             ;
         };
         $("#welcome").css("min-height", $window.height());
